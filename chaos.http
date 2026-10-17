@@ -1,0 +1,17 @@
+# Install the "REST Client" extension (humao.rest-client) in VS Code,
+# then click "Send Request" above any line starting with ###.
+
+### 1. Call our API (calls the partner behind the scenes)
+GET http://localhost:5080/api/rates
+
+### 2. Show current chaos settings
+GET http://localhost:5080/chaos
+
+### 3. Partner flaky: 50% failures (default)
+POST http://localhost:5080/chaos/partner/50
+
+### 4. Partner fully down: 100% failures (circuit breaker demo)
+POST http://localhost:5080/chaos/partner/100
+
+### 5. Partner healthy: 0% failures
+POST http://localhost:5080/chaos/partner/0
